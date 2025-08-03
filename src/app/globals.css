@@ -1,26 +1,44 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    font-family: var(--font-poppins), sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .bakery-gradient {
+    background: linear-gradient(135deg, #fef7e0 0%, #fdf2d9 50%, #fef7e0 100%);
+  }
+  
+  .bread-gradient {
+    background: linear-gradient(135deg, #d4a574 0%, #e6c088 50%, #d4a574 100%);
+  }
+  
+  .pastry-gradient {
+    background: linear-gradient(135deg, #f8e5d4 0%, #f5dcc3 50%, #f8e5d4 100%);
+  }
+
+  /* Custom Slider Styles */
+  .banner-slider .slick-dots {
+    bottom: 20px;
+  }
+
+  .banner-slider .slick-dots li button:before {
+    color: white;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+
+  .banner-slider .slick-dots li.slick-active button:before {
+    opacity: 1;
+  }
+
+  .banner-slider .slick-prev,
+  .banner-slider .slick-next {
+    display: none !important;
+  }
 }
+
